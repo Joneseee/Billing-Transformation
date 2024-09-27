@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>Applied_Logo.ico</ApplicationIcon>
+    <AssemblyName>LocationIdGenerator</AssemblyName>
+	<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+	<ResourceLanguages>en</ResourceLanguages>
+	<Version>4.1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Applied_Logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AppliedIntegration\AppliedIntegration.csproj" />
+    <ProjectReference Include="..\IntegrationLogic\IntegrationLogic.csproj" />
+  </ItemGroup>
+
+</Project>
