@@ -1,0 +1,277 @@
+﻿<!--Application startup set to Application_Startup method in App.xaml.cs-->
+<Application x:Class="ConfigurationApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ConfigurationApp"
+             Startup="App_Startup">
+
+    <!--Application resources containing assets and styles-->
+    <Application.Resources>
+
+        <!--Entry point for resource dictionary-->
+        <ResourceDictionary>
+
+            <!--Key creation for assets-->
+            <BitmapImage x:Key="AppliedLogo" UriSource="pack://application:,,,/AppliedIntegration;component/Assets/Applied_Logo.ico"/>
+            <BitmapImage x:Key="EditSettings" UriSource="pack://application:,,,/AppliedIntegration;component/Assets/Edit.png"/>
+            <BitmapImage x:Key="SaveSettings" UriSource="pack://application:,,,/AppliedIntegration;component/Assets/Save.png"/>
+
+            <!--Application styles-->
+
+            <!--Label styles-->
+            <Style TargetType="Label" x:Key="HeaderLabel">
+                <Setter Property="Content" Value="Configuration Settings"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="Margin" Value="20,0,0,1"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#FF3D3D3F"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="GroupBoxLabel">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="Margin" Value="0,0,5,4"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontWeight" Value="DemiBold"/>
+                <Setter Property="Foreground" Value="#FF3D3D3F"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="SdkLocationLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="SDK Location (URL) :"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="DatabaseNameLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="Database Name :"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="AuthenticationKeyLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="Authentication Key :"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="WebServiceLocationLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="Web Service (URL) :"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="AgencyCodeLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="Agency Code :"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="AgencyPasswordLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="Password :"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="EmailToSeparateLabel">
+                <Setter Property="Content" Value="Separate multiple email addresses using semicolon ;"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="Margin" Value="0,-5,5,0"/>
+                <Setter Property="FontSize" Value="9"/>
+                <Setter Property="FontWeight" Value="DemiBold"/>
+                <Setter Property="Foreground" Value="#FF3D3D3F"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="SqlServerLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="SQL Server :"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="SqlDatabaseLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="SQL Database :"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="SqlUsernameLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="Username :"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="SdkUserLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="User code :"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="SqlPasswordLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="Password :"/>
+            </Style>
+            <Style TargetType="Label" x:Key="StartDateLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="Start Date :"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="MajescoFilePathLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="Majesco File Path :"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="CurrentScheduleLabel" BasedOn="{StaticResource GroupBoxLabel}">
+                <Setter Property="Content" Value="Current Schedule :"/>
+            </Style>
+
+            <!--GroupBox styles-->
+            <Style TargetType="GroupBox" x:Key="GroupBox">
+                <Setter Property="Margin" Value="0,0,0,0"/>
+                <Setter Property="IsEnabled" Value="False"/>
+            </Style>
+
+            <!--TextBox styles-->
+            <Style TargetType="TextBox" x:Key="GroupBoxTextBox">
+                <Setter Property="Margin" Value="0,2,0,6"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Style.Triggers>
+                    <Trigger Property="Text" Value="">
+                        <Setter Property="BorderBrush" Value="Red"/>
+                        <Setter Property="ToolTip" Value="Required"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="BorderBrush" Value="Black"/>
+                    </Trigger>
+                </Style.Triggers>
+
+            </Style>
+
+            <!--TextBox styles-->
+            <Style TargetType="TextBox" x:Key="OptionalTextBox">
+                <Setter Property="Margin" Value="0,2,0,6"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Style.Triggers>
+                    <Trigger Property="Text" Value="">
+                        <Setter Property="BorderBrush" Value="#EDD715"/>
+                        <Setter Property="ToolTip" Value="Optional"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="BorderBrush" Value="Black"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!--Tooltip styles-->
+            <Style TargetType="Button" x:Key="ToolTip">
+                <Setter Property="ToolTipService.InitialShowDelay" Value="1000"/>
+                <Setter Property="ToolTipService.ShowDuration" Value="2000"/>
+                <Setter Property="ToolTipService.BetweenShowDelay" Value="5000"/>
+                <Setter Property="ToolTipService.ShowOnDisabled" Value="True"/>
+            </Style>
+
+            <!--Button styles-->
+            <Style TargetType="Button" x:Key="ImageButton" BasedOn="{StaticResource ToolTip}">
+                <Setter Property="Width" Value="25"/>
+                <Setter Property="Height" Value="25"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Margin" Value="0,25,10,0"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="DodgerBlue"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="SaveButton" BasedOn="{StaticResource ImageButton}">
+                <Setter Property="ToolTip" Value="Save settings"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="EditButton" BasedOn="{StaticResource ImageButton}">
+                <Setter Property="ToolTip" Value="Edit settings"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="WindowButton" BasedOn="{StaticResource ToolTip}">
+                <Setter Property="Width" Value="100"/>
+                <Setter Property="Height" Value="25"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="5,0,5,10"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="VisibleButton" BasedOn="{StaticResource WindowButton}">
+                <Setter Property="VerticalAlignment" Value="Bottom"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="FinishButton" BasedOn="{StaticResource VisibleButton}">
+                <Setter Property="Content" Value="Finish"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="TestConnectionButton" BasedOn="{StaticResource VisibleButton}">
+                <Setter Property="Content" Value="Test / Submit"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="ScheduleButton" BasedOn="{StaticResource VisibleButton}">
+                <Setter Property="Content" Value="Schedule"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="FileDirectoryButton">
+                <Setter Property="Content" Value="..."/>
+                <Setter Property="Width" Value="25"/>
+                <Setter Property="Height" Value="20"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="-5,5,5,10"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="CancelButton" BasedOn="{StaticResource WindowButton}">
+                <Setter Property="Content" Value="Cancel"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Margin" Value="5,5,5,0"/>
+            </Style>
+
+            <!--Error button style - complex enough to list separately-->
+            <Style TargetType="Button" x:Key="ErrorButton">
+                <Setter Property="Margin" Value="0,0,10,0"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Background" Value="{x:Null}"/>
+                <Setter Property="BorderBrush" Value="{x:Null}"/>
+            </Style>
+
+            <Style TargetType="Polygon" x:Key="ErrorPolygon">
+                <Setter Property="Margin" Value="0,2,0,0"/>
+                <Setter Property="Points" Value="5,0 10,0 15,5 15,10 10,15 5,15 0,10 0,5"/>
+                <Setter Property="StrokeThickness" Value="2"/>
+                <Setter Property="Stroke" Value="DarkRed"/>
+                <Setter Property="Fill" Value="DarkRed"/>
+            </Style>
+
+            <Style TargetType="TextBlock" x:Key="ErrorTextBlock">
+                <Setter Property="Margin" Value="0,0,1,2"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Text" Value="!"/>
+            </Style>
+
+            <!--CheckBox styles-->
+            <Style TargetType="CheckBox" x:Key="BdeCheckBox">
+                <Setter Property="Margin" Value="5,0,5,10"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontWeight" Value="DemiBold"/>
+                <Setter Property="Content" Value="Use BDE connection"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Bottom"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+            </Style>
+
+            <!--Grid styles-->
+            <Style TargetType="Grid" x:Key="HeaderGrid">
+                <Setter Property="Margin" Value="0,0,0,2"/>
+                <Setter Property="Width" Value="Auto"/>
+                <Setter Property="Height" Value="Auto"/>
+                <Setter Property="Background" Value="LightGray"/>
+            </Style>
+
+            <!--Status Bar styles-->
+            <Style TargetType="StatusBar" x:Key="StatusBar">
+                <Setter Property="DockPanel.Dock" Value="Bottom"/>
+            </Style>
+
+            <!--Status Bar Item styles-->
+            <Style TargetType="StatusBarItem" x:Key="StatusBarItem">
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+            </Style>
+
+            <!--TextBlock styles-->
+            <Style TargetType="TextBlock" x:Key="ConnectionStatusTextBlock">
+                <Setter Property="Margin" Value="0,0,25,0"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+
+</Application>

@@ -1,0 +1,124 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Version>4.1.0.0</Version>
+	<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+	<ResourceLanguages>en</ResourceLanguages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Queries\CreateIndexes.sql" />
+    <None Remove="Queries\CreateMappingTables.sql" />
+    <None Remove="Queries\CreateTableColumns.sql" />
+    <None Remove="Queries\CreateTables.sql" />
+    <None Remove="Queries\DatabaseReindex.sql" />
+    <None Remove="Queries\DataSync.sql" />
+    <None Remove="Queries\DataSync\DisbursementReferSync.sql" />
+    <None Remove="Queries\DataSync\GenerateTaxFeeSync.sql" />
+    <None Remove="Queries\DataSync\ItemNumberSync.sql" />
+    <None Remove="Queries\DataSync\MajescoHeaderSync.sql" />
+    <None Remove="Queries\DataSync\NullValueSync.sql" />
+    <None Remove="Queries\DataSync\PaymentAdjustmentSync.sql" />
+    <None Remove="Queries\DataSync\PaymentApplySync.sql" />
+    <None Remove="Queries\DataSync\PaymentReferSync.sql" />
+    <None Remove="Queries\DataSync\PaymentSync.sql" />
+    <None Remove="Queries\DataSync\PolicyReSync.sql" />
+    <None Remove="Queries\DataSync\PolicySync.sql" />
+    <None Remove="Queries\DataSync\ReceiptIdSync.sql" />
+    <None Remove="Queries\DataSync\RefundSync.sql" />
+    <None Remove="Queries\DataSync\ReprocessPaymentSync.sql" />
+    <None Remove="Queries\DataSync\ReturnedPaymentSync.sql" />
+    <None Remove="Queries\DataSync\VoidRefundSync.sql" />
+    <None Remove="Queries\DataSync\WriteOffSync.sql" />
+    <None Remove="Queries\DeleteItemByHeader.sql" />
+    <None Remove="Queries\GetTaxFeeInfo.sql" />
+    <None Remove="Queries\HeaderException.sql" />
+    <None Remove="Queries\HeaderInsert.sql" />
+    <None Remove="Queries\ItemInsert.sql" />
+    <None Remove="Queries\MajescoCheck.sql" />
+    <None Remove="Queries\MajescoMappingCheck.sql" />
+    <None Remove="Queries\PaymentAdjustmentCheck.sql" />
+    <None Remove="Queries\PostProcessing.sql" />
+    <None Remove="Queries\ProcessItems.sql" />
+    <None Remove="Queries\ReprocessErrors.sql" />
+    <None Remove="Queries\UpdateItem.sql" />
+    <None Remove="Queries\ValidateFiles.sql" />
+    <None Remove="Queries\Validation\GetPolicyLineMatch.sql" />
+    <None Remove="Queries\Validation\LocateExistingClient.sql" />
+    <None Remove="Queries\Validation\MajescoHeaderValidation.sql" />
+    <None Remove="Queries\Validation\UpdateCompanyMapping.sql" />
+    <None Remove="Queries\Validation\UpdateItemCompanyMapping.sql" />
+    <None Remove="Queries\Validation\UpdateLineTypes.sql" />
+    <None Remove="Queries\Validation\UpdateReceivableFormCombo.sql" />
+    <None Remove="Queries\ZeroBalanceReceiptItems.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Queries\CreateTableColumns.sql" />
+    <EmbeddedResource Include="Queries\CreateIndexes.sql" />
+    <EmbeddedResource Include="Queries\CreateMappingTables.sql" />
+    <EmbeddedResource Include="Queries\DatabaseReindex.sql" />
+    <EmbeddedResource Include="Queries\DataSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\GenerateTaxFeeSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\PolicyReSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\ReprocessPaymentSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\PaymentSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\PolicySync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\ReturnedPaymentSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\PaymentApplySync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\PaymentAdjustmentSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\VoidRefundSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\DisbursementReferSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\PaymentReferSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\RefundSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\WriteOffSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\NullValueSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\ReceiptIdSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\ItemNumberSync.sql" />
+    <EmbeddedResource Include="Queries\DataSync\MajescoHeaderSync.sql" />
+    <EmbeddedResource Include="Queries\HeaderException.sql" />
+    <EmbeddedResource Include="Queries\ItemInsert.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Queries\CreateTables.sql" />
+    <EmbeddedResource Include="Queries\HeaderInsert.sql" />
+    <EmbeddedResource Include="Queries\MajescoCheck.sql" />
+    <EmbeddedResource Include="Queries\MajescoMappingCheck.sql" />
+    <EmbeddedResource Include="Queries\PaymentAdjustmentCheck.sql" />
+    <EmbeddedResource Include="Queries\PostProcessing.sql" />
+    <EmbeddedResource Include="Queries\ZeroBalanceReceiptItems.sql" />
+    <EmbeddedResource Include="Queries\ProcessItems.sql" />
+    <EmbeddedResource Include="Queries\ReprocessErrors.sql" />
+    <EmbeddedResource Include="Queries\DeleteItemByHeader.sql" />
+    <EmbeddedResource Include="Queries\UpdateItem.sql" />
+    <EmbeddedResource Include="Queries\ValidateFiles.sql" />
+    <EmbeddedResource Include="Queries\Validation\LocateExistingClient.sql" />
+    <EmbeddedResource Include="Queries\Validation\GetPolicyLineMatch.sql" />
+    <EmbeddedResource Include="Queries\Validation\UpdateItemCompanyMapping.sql" />
+    <EmbeddedResource Include="Queries\Validation\MajescoHeaderValidation.sql" />
+    <EmbeddedResource Include="Queries\Validation\UpdateLineTypes.sql" />
+    <EmbeddedResource Include="Queries\Validation\UpdateReceivableFormCombo.sql" />
+    <EmbeddedResource Include="Queries\Validation\UpdateCompanyMapping.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.3.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.3.1" />
+    <PackageReference Include="TaskScheduler" Version="2.10.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SDK\SDK.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Queries\GetTaxFeeInfo.sql" />
+  </ItemGroup>
+
+</Project>
